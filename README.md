@@ -2,6 +2,8 @@
 
 A secure asset management Vault program on Solana blockchain.
 
+> **Note**: This project was developed with the assistance of AI.
+
 ## Overview
 
 This project is a Vault program developed using Solana + Anchor framework.

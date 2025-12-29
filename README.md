@@ -11,9 +11,9 @@ This project is a Vault program developed using Solana + Anchor framework.
 ## Development Plan
 
 ### Phase 1: Development (4 hours)
-- [x] Solana + Anchor installation
-- [x] Vault program implementation
-- [x] Test writing
+- [v] Solana + Anchor installation
+- [v] Vault program implementation
+- [v] Test writing
 - [ ] Local test passing
 
 ### Phase 2: Deployment (1 hour)
@@ -23,10 +23,10 @@ This project is a Vault program developed using Solana + Anchor framework.
 - [ ] Test re-execution
 
 ### Phase 3: Documentation (30 minutes)
-- [x] README writing
-- [x] Functionality explanation document
+- [v] README writing
+- [v] Functionality explanation document
 - [ ] Screenshots addition
-- [x] GitHub upload
+- [v] GitHub upload
 
 ## Tech Stack
 

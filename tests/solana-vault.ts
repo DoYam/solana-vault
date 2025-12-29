@@ -3,13 +3,11 @@ import { Program } from "@coral-xyz/anchor";
 import { SolanaVault } from "../target/types/solana_vault";
 
 describe("solana-vault", () => {
-  // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.solanaVault as Program<SolanaVault>;
 
   it("Is initialized!", async () => {
-    // Add your test here.
     const tx = await program.methods.initialize().rpc();
     console.log("Your transaction signature", tx);
   });

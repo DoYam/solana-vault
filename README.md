@@ -1,82 +1,84 @@
 # Solana Vault
 
-Solana 블록체인에서 안전한 자산 관리를 위한 Vault 프로그램입니다.
+A secure asset management Vault program on Solana blockchain.
 
-## 프로젝트 개요
+## Overview
 
-이 프로젝트는 Solana + Anchor 프레임워크를 사용하여 개발된 Vault 프로그램입니다.
+This project is a Vault program developed using Solana + Anchor framework.
 
-## 개발 계획
+## Development Plan
 
-### Phase 1: 개발 (4시간)
-- [x] Solana + Anchor 설치
-- [ ] Vault 프로그램 작성
-- [ ] 테스트 작성
-- [ ] 로컬 테스트 통과
+### Phase 1: Development (4 hours)
+- [x] Solana + Anchor installation
+- [ ] Vault program implementation
+- [ ] Test writing
+- [ ] Local test passing
 
-### Phase 2: 배포 (1시간)
-- [ ] Devnet 배포
-- [ ] Program ID 확인
-- [ ] Solana Explorer에서 확인
-- [ ] 테스트 재실행
+### Phase 2: Deployment (1 hour)
+- [ ] Devnet deployment
+- [ ] Program ID verification
+- [ ] Solana Explorer verification
+- [ ] Test re-execution
 
-### Phase 3: 문서화 (30분)
-- [x] README 작성
-- [ ] 스크린샷 추가
-- [x] GitHub 업로드
+### Phase 3: Documentation (30 minutes)
+- [x] README writing
+- [ ] Screenshots addition
+- [x] GitHub upload
 
-## 기술 스택
+## Tech Stack
 
 - **Solana CLI**: 1.18.20
 - **Anchor**: 0.32.1
 - **Rust**: 1.92.0
 
-## 시작하기
+## Getting Started
 
-### 사전 요구사항
+### Prerequisites
 
-- Rust (1.92.0 이상)
+- Rust (1.92.0 or higher)
 - Solana CLI
 - Anchor CLI
-- Node.js (v20.18.0 이상 권장)
+- Node.js (v20.18.0 or higher recommended)
 
-### 설치
+### Installation
 
 ```bash
-# 의존성 설치
 npm install
+```
 
-# 또는
+or
+
+```bash
 yarn install
 ```
 
-### 빌드
+### Build
 
 ```bash
 anchor build
 ```
 
-### 테스트
+### Test
 
 ```bash
 anchor test
 ```
 
-## 프로젝트 구조
+## Project Structure
 
 ```
 solana-anchor-project/
-├── Anchor.toml          # Anchor 설정 파일
-├── programs/            # Solana 프로그램
+├── Anchor.toml
+├── programs/
 │   └── solana-vault/
 │       └── src/
-│           └── lib.rs   # 메인 프로그램 코드
-├── tests/               # 테스트 파일
+│           └── lib.rs
+├── tests/
 │   └── solana-vault.ts
-└── migrations/          # 배포 스크립트
+└── migrations/
 ```
 
-## 라이선스
+## License
 
 ISC
 

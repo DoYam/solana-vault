@@ -25,6 +25,7 @@ This project is a Vault program developed using Solana + Anchor framework.
 ### Phase 3: Documentation (30 minutes)
 - [v] README writing
 - [v] Functionality explanation document
+- [v] Architecture explanation document
 - [ ] Screenshots addition
 - [v] GitHub upload
 
@@ -71,15 +72,28 @@ anchor test
 
 ```
 solana-anchor-project/
-├── Anchor.toml
-├── programs/
+├── Anchor.toml              # Anchor framework configuration
+├── Cargo.toml               # Rust workspace configuration
+├── package.json             # Node.js dependencies
+├── programs/                # Solana programs (smart contracts)
 │   └── solana-vault/
+│       ├── Cargo.toml       # Program-specific Rust config
 │       └── src/
-│           └── lib.rs
-├── tests/
-│   └── solana-vault.ts
-└── migrations/
+│           └── lib.rs       # Main program code
+├── tests/                   # Test files
+│   └── solana-vault.ts      # TypeScript test suite
+├── migrations/              # Deployment scripts
+│   └── deploy.ts           # Program deployment script
+├── README.md               # Project documentation
+├── FUNCTIONALITY_EXPLANATION.md  # Feature explanations
+└── ARCHITECTURE_EXPLANATION.md   # Architecture and code flow
 ```
+
+## Documentation
+
+- **[README.md](./README.md)**: Project overview and quick start
+- **[FUNCTIONALITY_EXPLANATION.md](./FUNCTIONALITY_EXPLANATION.md)**: Detailed feature explanations
+- **[ARCHITECTURE_EXPLANATION.md](./ARCHITECTURE_EXPLANATION.md)**: Architecture, code flow, and technical details
 
 ## Features
 
@@ -186,6 +200,53 @@ pub struct Vault {
 - **Overflow Protection**: Uses `checked_add` to prevent integer overflow
 - **Insufficient Funds Check**: Validates vault balance before withdrawal
 - **Account Constraints**: Anchor's constraint system ensures account validity
+
+## Usage Example
+
+### Initialize a Vault
+
+```typescript
+const [vaultPda] = await PublicKey.findProgramAddress(
+  [Buffer.from("vault"), owner.publicKey.toBuffer()],
+  program.programId
+);
+
+await program.methods
+  .initialize()
+  .accounts({
+    vault: vaultPda,
+    owner: owner.publicKey,
+    systemProgram: SystemProgram.programId,
+  })
+  .rpc();
+```
+
+### Deposit SOL
+
+```typescript
+await program.methods
+  .deposit(new anchor.BN(0.5 * LAMPORTS_PER_SOL))
+  .accounts({
+    vault: vaultPda,
+    user: user.publicKey,
+    systemProgram: SystemProgram.programId,
+  })
+  .signers([user])
+  .rpc();
+```
+
+### Withdraw SOL
+
+```typescript
+await program.methods
+  .withdraw(new anchor.BN(0.2 * LAMPORTS_PER_SOL))
+  .accounts({
+    vault: vaultPda,
+    owner: owner.publicKey,
+    recipient: recipient.publicKey,
+  })
+  .rpc();
+```
 
 ## License
 
